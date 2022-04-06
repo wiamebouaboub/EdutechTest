@@ -24,7 +24,10 @@ public class UserDetailsImpl implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(int id, String first_name, String last_name, String email, String password,
+    public UserDetailsImpl() {
+    }
+
+    public UserDetailsImpl(Integer id, String first_name, String last_name, String email, String password,
             Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.first_name = first_name;
