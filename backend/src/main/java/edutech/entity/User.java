@@ -9,7 +9,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    private int user_id;
 
     @Column(unique = true)
     @NonNull
@@ -35,8 +35,7 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "id_user"), inverseJoinColumns = @JoinColumn(name = "id_role"))
     private Set<Role> roles;
 
-    public User() {
-    }
+  
 
     public User(String first_name, String last_name, String email, String password) {
         this.first_name = first_name;
@@ -45,11 +44,11 @@ public class User {
         this.password = password;
     }
 
-    public Long getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 

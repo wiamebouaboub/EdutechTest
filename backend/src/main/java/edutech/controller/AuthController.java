@@ -42,8 +42,8 @@ public class AuthController {
     PasswordEncoder encoder;
     @Autowired
     JwtUtils jwtUtils;
-    @Autowired
-    private AuthenticationManager authenticationManagerBean;
+    /*@Autowired
+    private AuthenticationManager authenticationManagerBean;*/
 
     
 

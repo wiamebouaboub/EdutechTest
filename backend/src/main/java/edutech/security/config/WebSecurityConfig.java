@@ -31,13 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         return bCryptPasswordEncoder;
     }   
-/*
-    @Bean(name = "entityManagerFactory")
+
+  /*  @Bean(name = "entityManagerFactory")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
         return sessionFactory;
-    }
-*/
+    }*/
+
 
 }

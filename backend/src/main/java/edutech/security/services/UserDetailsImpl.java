@@ -1,5 +1,6 @@
 package edutech.security.services;
 
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -15,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Service
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID = 1L;
-    private Long id;
+    private int id;
     private String first_name;
     private String last_name;
     private String email;
@@ -23,7 +24,7 @@ public class UserDetailsImpl implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String first_name, String last_name, String email, String password,
+    public UserDetailsImpl(int id, String first_name, String last_name, String email, String password,
             Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.first_name = first_name;
@@ -51,7 +52,7 @@ public class UserDetailsImpl implements UserDetails {
         return authorities;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
