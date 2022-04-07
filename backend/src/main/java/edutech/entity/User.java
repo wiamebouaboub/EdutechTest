@@ -1,12 +1,14 @@
 package edutech.entity;
 
 import lombok.NonNull;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@ToString
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;

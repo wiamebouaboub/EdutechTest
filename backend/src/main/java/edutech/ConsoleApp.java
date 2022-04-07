@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.log4j.Log4j2;
@@ -17,6 +18,8 @@ import edutech.entity.*;
 public class ConsoleApp implements CommandLineRunner {
     @Autowired // Auto-initialisé par Spring
     private UserRepository userDAO;
+    @Autowired
+    PasswordEncoder encoder;
 
     @Override
     /*
@@ -33,7 +36,7 @@ public class ConsoleApp implements CommandLineRunner {
         tapezEnterPourContinuer();
 
         log.info("On ajoute un nouvel enregistrement");
-        User eleve1 = new User("nico", "aymard","nico@gmail.com","nicoymd");
+        User eleve1 = new User("nico", "aymard","nico@gmail.com",encoder.encode("nicoymd"));
         log.info("Avant d'enregistrer, pas de clé : {}", eleve1);
         userDAO.save(eleve1);
         log.info("Après l'enregistrement, la clé a été générée : {}", eleve1);
