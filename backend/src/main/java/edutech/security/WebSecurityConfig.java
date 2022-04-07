@@ -18,7 +18,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(final WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/static/**");
+                .antMatchers("/static/**")
+                .antMatchers("/h2-console/**");
     }
 
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
